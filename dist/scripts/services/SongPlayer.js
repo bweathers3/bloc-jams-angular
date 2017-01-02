@@ -101,6 +101,12 @@
         SongPlayer.currentTime = null;
         
         /**
+        * @desc set intial value of song volume to 40%
+        * @type {Number}
+        */
+        SongPlayer.volume = 25;
+        
+        /**
         * @function SongPlayer.play
         * @desc Resets the song by calling setSong and playSong functions
         * @param {Object} song
@@ -159,6 +165,17 @@
                 var song = SongPlayer.currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
+            }
+        };
+        
+        /**
+        * @function setVolume
+        * @desc Set volume of playing song
+        * @param {Number} newValue
+        */
+        SongPlayer.setVolume = function(newValue) {
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(newValue);
             }
         };
         
