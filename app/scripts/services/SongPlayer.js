@@ -5,7 +5,7 @@
     * @desc loads Album data 
     * @param {Object} Fixtures - Album data
     */
-    function SongPlayer(Fixtures) {
+    function SongPlayer($rootScope, Fixtures) {
         var SongPlayer = {};    
         var currentAlbum = Fixtures.getAlbum();
         var currentBuzzObject = null;
@@ -28,6 +28,17 @@
                 formats: ['mp3'],
                 preload: true
             });
+            
+            /**
+            * @desc custom event using the Buzz libary getTime method to return the current time of the song playing to the rootScope
+            * @type {Object}
+            */
+            currentBuzzObject.bind('timeupdate', function() {
+                $rootScope.$apply(function() {
+                SongPlayer.currentTime = currentBuzzObject.getTime();
+                });
+            });
+
             SongPlayer.currentSong = song;
         };
         
@@ -156,5 +167,5 @@
  
     angular
         .module('blocJams')
-        .factory('SongPlayer', SongPlayer);
+        .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
 })();

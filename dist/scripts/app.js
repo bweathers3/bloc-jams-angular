@@ -24,8 +24,7 @@
             });
     }
  
-angular.module('blocJams', ['ui.router']);
-     angular
-         .module('blocJams', ['ui.router'])
-         .config(config);
+    angular
+        .module('blocJams', ['ui.router'])
+        .config(config);
 })();
