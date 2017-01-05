@@ -87,7 +87,7 @@
         * @type {Object}
         */
         SongPlayer.currentAlbum = Fixtures.getAlbum();
-
+        
         /**
         * @desc Active song object from list of songs
         * @type {Object}
@@ -105,6 +105,13 @@
         * @type {Number}
         */
         SongPlayer.volume = 25;
+        
+        /**
+        * @desc volume muted or not.
+        * @type {boolean}
+        */
+        SongPlayer.volumeMuted = false;
+ 
         
         /**
         * @function SongPlayer.play
@@ -178,6 +185,24 @@
                 currentBuzzObject.setVolume(newValue);
             }
         };
+ 
+        /**
+        * @function muteVolume
+        * @desc Mutes/umutes the volume on click
+        * @param {Object}
+        */
+        SongPlayer.muteVolume = function() {
+            if (currentBuzzObject) {
+                if (currentBuzzObject.isMuted()) {
+                    currentBuzzObject.unmute();
+                    SongPlayer.volumeMuted = false;
+                } else {
+                    currentBuzzObject.mute();
+                    SongPlayer.volumeMuted = true;
+                }
+            }
+         };
+         
         
         return SongPlayer;
     }
