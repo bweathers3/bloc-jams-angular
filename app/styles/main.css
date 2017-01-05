@@ -6,21 +6,21 @@
 }
 
 .container {
-     margin: 0 auto;
-     max-width: 64rem;
+    margin: 0 auto;
+    max-width: 64rem;
 }
 
 .container.narrow {
-     max-width: 56rem;
+    max-width: 56rem;
 }
  
 @media (min-width: 640px) {
     html { font-size: 112%; }
       
-     .column {
-         float: left;
-         padding-left: 1rem;
-         padding-right: 1rem;
+    .column {
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
      }
 
      .column.full { width: 100%; }
@@ -31,9 +31,9 @@
      .column.flow-opposite { float: right; }  
  }
  
- @media (min-width: 1024px) {
+@media (min-width: 1024px) {
     html { font-size: 120%; }
- }
+}
 
 
 html {
@@ -67,42 +67,42 @@ body {
  }
  
 .navbar .links-container {
-     display: table;
-     position: absolute;
-     top: 0;
-     right: 0;
-     height: 100px;
-     color: white;
-     text-decoration: none;
+    display: table;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    color: white;
+    text-decoration: none;
 }
  
 .links-container .navbar-link {
-     display: table-cell;
-     position: relative;
-     height: 100%;
-     padding-left: 1rem;
-     padding-right: 1rem;
-     vertical-align: middle;
-     color: white;
-     font-size: 0.625rem;
-     letter-spacing: 0.05rem;
-     font-weight: 700;
-     text-transform: uppercase;
-     text-decoration: none;
-     cursor: pointer;
+    display: table-cell;
+    position: relative;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    vertical-align: middle;
+    color: white;
+    font-size: 0.625rem;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
  }
  
 .links-container .navbar-link:hover {
-     color: rgb(233,50,117);
+    color: rgb(233,50,117);
  }
-}
+
 
 .clearfix::before,
 .clearfix::after {
-   content: " ";
-   display: table;
+    content: " ";
+    display: table;
 }
 
 .clearfix::after {
-   clear: both;
+    clear: both;
 }
