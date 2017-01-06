@@ -5,7 +5,9 @@
     * @desc loads Album data 
     * @param {Object} Fixtures - Album data
     */
+    
     function SongPlayer($rootScope, Fixtures) {
+    /* function SongPlayer(Fixtures) { */
         var SongPlayer = {};    
         var currentAlbum = Fixtures.getAlbum();
         var currentBuzzObject = null;
@@ -39,10 +41,12 @@
                  });
             });
             
+            
             currentBuzzObject.bind('ended', function(event) {
  				SongPlayer.next();
  			});
-        
+            
+            
             SongPlayer.currentSong = song;
         };
         
@@ -214,4 +218,5 @@
     angular
         .module('blocJams')
         .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
+        /*.factory('SongPlayer', ['Fixtures', SongPlayer]); */
 })();
