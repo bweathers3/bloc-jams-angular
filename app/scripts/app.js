@@ -21,6 +21,11 @@
                 url: '/album',
                 controller: 'AlbumCtrl as album',
                 templateUrl: '/templates/album.html'
+            })
+            .state('analytics', {
+                url: '/analytics',
+                controller: 'AnalyticsCtrl as analytics',
+                templateUrl: '/templates/analytics.html'
             });
     }
  

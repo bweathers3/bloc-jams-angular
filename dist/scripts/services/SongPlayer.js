@@ -6,7 +6,7 @@
     * @param {Object} Fixtures - Album data
     */
     
-    function SongPlayer($rootScope, Fixtures) {
+    function SongPlayer($rootScope, Fixtures, Metric) {
     /* function SongPlayer(Fixtures) { */
         var SongPlayer = {};    
         var currentAlbum = Fixtures.getAlbum();
@@ -131,6 +131,8 @@
             if (SongPlayer.currentSong !== song) {
                 setSong(song);
                 playSong(song);
+                Metric.registerSongPlay(song);
+                 console.log($rootScope.songPlays);
             } else if (SongPlayer.currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
                     currentBuzzObject.play();
@@ -163,6 +165,7 @@
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
+                Metric.registerSongPlay(song);
             }
         };
         
@@ -180,6 +183,7 @@
                 var song = SongPlayer.currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
+                Metric.registerSongPlay(song);
             }
         };
         
@@ -217,6 +221,6 @@
  
     angular
         .module('blocJams')
-        .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
+        .factory('SongPlayer', ['$rootScope', 'Fixtures', 'Metric', SongPlayer]);
         /*.factory('SongPlayer', ['Fixtures', SongPlayer]); */
 })();
