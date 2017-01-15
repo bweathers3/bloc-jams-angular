@@ -131,8 +131,7 @@
             if (SongPlayer.currentSong !== song) {
                 setSong(song);
                 playSong(song);
-                Metric.registerSongPlay(song);
-                 console.log($rootScope.songPlays);
+                Metric.registerSongPlay(song, getSongIndex(SongPlayer.currentSong));
             } else if (SongPlayer.currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
                     currentBuzzObject.play();
@@ -165,7 +164,7 @@
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
-                Metric.registerSongPlay(song);
+                Metric.registerSongPlay(song, getSongIndex(SongPlayer.currentSong));
             }
         };
         
@@ -183,7 +182,7 @@
                 var song = SongPlayer.currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
-                Metric.registerSongPlay(song);
+                Metric.registerSongPlay(song, getSongIndex(SongPlayer.currentSong));
             }
         };
         
