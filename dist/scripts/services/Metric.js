@@ -35,13 +35,11 @@
                 
                 // Add time to event register
                 albumMetric.albums[0].albumCount += 1;
-                albumMetric.albums[0].songs[index].songCount += 1;
-                
+                albumMetric.albums[0].songs[index].songCount += 1;     
             },
             
             listSongsPlayed: function() {
-                
-                console.log(albumMetric);
+                //console.log(albumMetric);
                 return albumMetric;
             }
         };

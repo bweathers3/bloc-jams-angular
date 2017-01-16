@@ -1,7 +1,7 @@
 (function () {
     function AnalyticsCtrl(Metric, SongPlayer) {
-        this.songs = Metric.listSongsPlayed();
-        console.log(this.songs);
+        this.ablums = Metric.listSongsPlayed();
+        console.log(this.albums);
         
     }
     
