@@ -1,5 +1,6 @@
 (function() {
     function Metric($rootScope) {
+        songNames = [];
         
         var albumMetric = {
             "albums": [
@@ -39,14 +40,18 @@
             },
             
             listSongsPlayed: function() {
-                //console.log(albumMetric);
+                console.log(albumMetric);
                 return albumMetric;
             }
+            
+            
         };
+        
+       
     }
 
     angular
         .module('blocJams')
-        .factory('Metric', ['$rootScope', Metric]);
+        .service('Metric', ['$rootScope', Metric]);
 })();
 

@@ -2,15 +2,14 @@
     <h1>Songs Played</h1>
     <div class="half-content">
  	
- 	  <table class="album-view-song-list">
- 		 <tr class="album-view-song-item">
- 			<td>Song Name</td>
- 			<td>Date played</td>
-          </tr>
- 
- 		         <tr class="album-view-song-item" ng-repeat="album in analytics.songs track by $index">
- 			        <td class="song-item-title">{{ album.name }}</td>
- 		         </tr>
+        <table class="album-view-song-list">
+            <tr class="album-view-song-item">
+                <td>Song Name</td>
+ 			    <td>Times played</td>
+            </tr>
+            <tr class="album-view-song-item" ng-repeat="ablums.name for album in albumMetric track by index">
+ 			    <td class="song-item-title">{{ album.name }}</td>
+ 		 </tr>
      </table>
    </div>
 </section>
