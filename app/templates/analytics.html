@@ -7,8 +7,9 @@
                 <td>Song Name</td>
  			    <td>Times played</td>
             </tr>
-            <tr class="album-view-song-item" ng-repeat="ablums.name for album in albumMetric track by index">
- 			    <td class="song-item-title">{{ album.name }}</td>
+            <tr class="album-view-song-item" ng-repeat="(key, value) in analytics.songs">
+ 			    <td class="song-item-title">{{ key }}</td>
+                <td class="song-item-title">{{ value }}</td>
  		 </tr>
      </table>
    </div>

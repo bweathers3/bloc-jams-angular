@@ -1,53 +1,35 @@
 (function() {
     function Metric($rootScope) {
-        songNames = [];
-        
-        var albumMetric = {
-            "albums": [
-                {
-                    "name": "The Colors",
-                    "albumCount": 0,
-                    "songs": [
-                        {"title": "Blue", "songCount": 0 },
-                        {"title": "Green", "songCount": 0 },
-                        {"title": "Red", "songCount": 0 },
-                        {"title": "Pink", "songCount": 0 },
-                        {"title": "Magenta", "songCount": 0 }
-                    ]
-                },
-                {
-                    "name": "The Telephone",
-                    "albumCount": 0,
-                    "songs": [
-                        {"title": "Hello, Operator?", "songCount": 0 },
-                        {"title": "Ring, ring, ring", "songCount": 0 },
-                        {"title": "Fits in your pocket", "songCount": 0 },
-                        {"title": "Can you hear me now?", "songCount": 0 },
-                        {"title": "Wrong phone number", "songCount": 0 }
-                    ]
-                }
-            ],
-        };
-        
+        //$rootScope.songPlays = [];
+        $rootScope.songTitles = [];
+            
         return {
         
             // Function that records a metric object by pushing it to the $rootScope array
             registerSongPlay: function(songObj, index) {
                 
                 // Add time to event register
-                albumMetric.albums[0].albumCount += 1;
-                albumMetric.albums[0].songs[index].songCount += 1;     
+                //songObj['playedAt'] = new Date();
+                //$rootScope.songPlays.push(songObj);
+                $rootScope.songTitles.push(songObj.title);
+                
             },
             
+             
             listSongsPlayed: function() {
-                console.log(albumMetric);
-                return albumMetric;
-            }
-            
-            
-        };
-        
-       
+                var songs = [];
+                var data = {};
+                angular.forEach($rootScope.songTitles, function(song) {
+                    if (songs.indexOf(song) == -1) {
+                        songs.push(song);
+                        data[song] = 1;  
+                    }else{
+                        data[song] += 1;
+                    }; 
+                });
+                return data;
+            }    
+        }; 
     }
 
     angular
