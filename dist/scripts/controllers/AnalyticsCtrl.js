@@ -1,6 +1,6 @@
 (function () {
     function AnalyticsCtrl(Metric, SongPlayer) {
-        this.songs = Metric.listSongsPlayed();  
+        this.songs = Metric.listSongsPlayed();
     }
     
     angular
