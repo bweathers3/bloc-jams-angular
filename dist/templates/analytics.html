@@ -1,4 +1,10 @@
-<section class="analytics-info" ng-controller="AnalyticsCtrl as analytics">
+<section class="analytics-info" >
+    
+    <div class="column half">
+        <h2>Songs Played</h2>
+        <nvd3 data="graphSongData" options="songsOptions"></nvd3>
+    </div>
+    
     <h1>Songs Played</h1>
     <div class="half-content">
  	

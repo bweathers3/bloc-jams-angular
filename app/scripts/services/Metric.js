@@ -18,16 +18,16 @@
              
             listSongsPlayed: function() {
                 var songs = [];
-                var data = {};
+                var localData = {};
                 angular.forEach($rootScope.songTitles, function(song) {
                     if (songs.indexOf(song) == -1) {
                         songs.push(song);
-                        data[song] = 1;  
+                        localData[song] = 1;  
                     }else{
-                        data[song] += 1;
+                        localData[song] += 1;
                     }; 
                 });
-                return data;
+                return localData;
             }    
         }; 
     }
