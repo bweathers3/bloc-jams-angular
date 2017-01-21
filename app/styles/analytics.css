@@ -1,0 +1,44 @@
+
+h1, h3 {
+    text-align: center;
+  }
+
+th {
+    text-align: left;
+}
+
+#analytics h4 {
+    font-weight: 100;
+}
+.analytics-d3 h3 {
+    color: #333333;
+}
+
+.analytics-d3 {
+    background-color: white;
+    margin: 3em 0;
+}
+
+.container.medium {
+    max-width: 70rem;
+}
+  
+.analytics-view-song-list {
+     width: 85%;
+     margin: 1.5rem auto;
+     font-weight: 300;
+     font-size: 1.25em;
+     border-collapse: collapse;
+ }
+
+.analytics-view-song-title {
+     height: 1.50rem;
+     border-bottom: 1px solid rgba(255,255,255,0.5);
+ }
+
+.analytics-view-song-item {
+    height: 1.50rem;
+    font-weight: 100;
+    font-size: 0.85em;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+ }

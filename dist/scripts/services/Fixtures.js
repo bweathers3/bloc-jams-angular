@@ -37,14 +37,11 @@
             this.albums = [];
             for (var i = 0; i < numberOfAlbums; i++) {
                 this.albums.push(angular.copy(albumPicasso));
-                //this.albums.push(angular.copy(albumMarconi));
             }
             return this.albums;
         };
         
         Fixtures.getAlbum = function() {
-        //Fixtures.getAlbum = function(albumTitle) {
-            //console.log(albumTitle);
             return albumPicasso;
         };
 

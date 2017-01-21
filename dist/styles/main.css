@@ -11,7 +11,7 @@
 }
 
 .container.narrow {
-    max-width: 56rem;
+    max-width: 45rem;
 }
  
 @media (min-width: 640px) {

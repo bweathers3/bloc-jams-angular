@@ -1,18 +1,18 @@
 (function() {
     function Metric($rootScope) {
-        //$rootScope.songPlays = [];
+        $rootScope.songPlays = [];
         $rootScope.songTitles = [];
-            
+        $rootScope.songDates = [];
+
         return {
         
             // Function that records a metric object by pushing it to the $rootScope array
             registerSongPlay: function(songObj, index) {
                 
-                // Add time to event register
-                //songObj['playedAt'] = new Date();
-                //$rootScope.songPlays.push(songObj);
+                songObj['playedAt'] = new Date();
+                songObj.playedAt = moment(songObj.playedAt).format("dddd, MMMM Do YYYY, h:mm:ss a");    
+                    console.log(songObj);
                 $rootScope.songTitles.push(songObj.title);
-                
             },
             
              
@@ -36,4 +36,3 @@
         .module('blocJams')
         .service('Metric', ['$rootScope', Metric]);
 })();
-
