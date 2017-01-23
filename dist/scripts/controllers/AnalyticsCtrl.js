@@ -1,10 +1,11 @@
 (function () {
     function AnalyticsCtrl($scope, Metric, SongPlayer) {
         this.songs = Metric.listSongsPlayed();
-        console.log(this.songs);
-        console.log("return data from metric");
         
-        $scope.songsOptions = {
+        //console.log(this.songs);
+        //console.log("return data from metric");
+        
+        $scope.songsBarGraphOptions = {
             chart: {
                 type: 'discreteBarChart',
                 height: 450,
@@ -22,7 +23,7 @@
                 },
                 transitionDuration: 500,
                 xAxis: {
-                    axisLabel: 'Albums'
+                    axisLabel: 'Songs'
                 },
                 yAxis: {
                     axisLabel: 'Number of Plays',
@@ -30,39 +31,19 @@
                 }
             }
         }
-        /*
-        // ***********************
-            
-        var values = [];
-        var graphSongData = [];
-        
-        angular.forEach(this.songs, function(value,key) {
-            values.push({'label' : key, 'value' : value});
-        });
-            
-        $scope.graphSongData = values;
-            console.log("$scope data load");
-            console.log($scope.graphSongData);
-              
-        // ***********************
-        */
             
         var values = [];
          
         angular.forEach(this.songs, function(value,key) {
             values.push({'label' : key, 'value' : value});
         });
-        
-        $scope.exampleData = [{
+            //console.log(values);
+        $scope.cumulativeData = [{
             key: "Cumulative Return",
             values: values
         }];
-        
-        
-            console.log("$scope data load");
-            console.log($scope.graphSongData);
-              
-        
+            //console.log("$scope data load");
+            //console.log($scope.graphSongData);
         
     }
     

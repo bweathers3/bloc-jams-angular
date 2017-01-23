@@ -1,8 +1,9 @@
 (function() {
     function Metric($rootScope) {
-        $rootScope.songPlays = [];
+        //$rootScope.songPlays = [];
         $rootScope.songTitles = [];
         $rootScope.songDates = [];
+        holdData = {};
 
         return {
         
@@ -12,6 +13,7 @@
                 songObj['playedAt'] = new Date();
                 songObj.playedAt = moment(songObj.playedAt).format("dddd, MMMM Do YYYY, h:mm:ss a");    
                     console.log(songObj);
+                $rootScope.songDates.push(songObj);
                 $rootScope.songTitles.push(songObj.title);
             },
             
@@ -28,7 +30,8 @@
                     }; 
                 });
                 return localData;
-            }    
+            }             
+            
         }; 
     }
 

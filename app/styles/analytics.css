@@ -24,16 +24,17 @@ th {
 }
   
 .analytics-view-song-list {
-     width: 85%;
-     margin: 1.5rem auto;
-     font-weight: 300;
-     font-size: 1.25em;
-     border-collapse: collapse;
+    width: 65%;
+    margin: 1.5rem auto;
+    font-weight: 300;
+    font-size: 1.25em;
+    border-collapse: collapse;
  }
 
 .analytics-view-song-title {
-     height: 1.50rem;
-     border-bottom: 1px solid rgba(255,255,255,0.5);
+    height: 1.50rem;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    text-align: center;
  }
 
 .analytics-view-song-item {
@@ -41,4 +42,5 @@ th {
     font-weight: 100;
     font-size: 0.85em;
     border-bottom: 1px solid rgba(255,255,255,0.5);
+    text-align: center;
  }
