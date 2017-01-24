@@ -1,5 +1,9 @@
 
-h1 {
+.analytics-h1 {
+    text-align: center;
+  }
+
+.analytics-h3 {
     text-align: center;
   }
 

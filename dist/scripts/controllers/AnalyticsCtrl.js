@@ -29,16 +29,10 @@
                 }
             }
         }
-            
-        var values = [];
-         
-        angular.forEach(this.songs, function(value,key) {
-            values.push({'label' : key, 'value' : value, 'date' : "blank date"});
-        });
-       
+        
         $scope.cumulativeData = [{
             key: "Cumulative Return",
-            values: values
+            values: this.songs
         }];
     }
     

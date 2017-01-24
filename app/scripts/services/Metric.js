@@ -2,32 +2,41 @@
     function Metric($rootScope) {
         $rootScope.songTitles = [];
         $rootScope.songDates = [];
-
+        
         return {
         
             registerSongPlay: function(songObj, index) {
-                
+                data = {};
                 songObj['playedAt'] = new Date();
                 songObj.playedAt = moment(songObj.playedAt).format("dddd, MMMM Do YYYY, h:mm:ss a");    
-              
-                $rootScope.songDates.push(songObj);
+                 
                 $rootScope.songTitles.push(songObj.title);
+                $rootScope.songDates.push({'title' : songObj.title, 'date' : songObj.playedAt});
+  
             },
             
             listSongsPlayed: function() {
+               
                 var songs = [];
-                var localData = {};
-                angular.forEach($rootScope.songTitles, function(song) {
-                    if (songs.indexOf(song) == -1) {
-                        songs.push(song);
-                        localData[song] = 1;  
+                var localSongsTable = [];               
+                angular.forEach($rootScope.songDates, function(song) {
+                    if (songs.indexOf(song.title) == -1) {
+                        songs.push(song.title);
+                        
+                        var songInfo = {'label' : song.title, 'value' : 1, 'date' : song.date};
+                        localSongsTable.push(songInfo);
+                        songInfo = {};    
                     }else{
-                        localData[song] += 1;
+                        for ( i =0; i < localSongsTable.length; i++ ) {  
+                            if (localSongsTable[i].label === song.title) {
+                                localSongsTable[i].value += 1;
+                                localSongsTable[i].date = song.date;
+                            }
+                        }
                     }; 
-                });
-                return localData;
-            }             
-            
+                }); 
+                return localSongsTable;
+            }            
         }; 
     }
 

@@ -1,7 +1,7 @@
 <section class="analytics-info" >
     
     <div class="container narrow analytics">
-        <h1>Songs Played</h1>
+        <h1 class="analytics-h1">Songs Played</h1>
         <div class="analytics-d3 clearfix">
             <nvd3 options="songsBarGraphOptions" data="cumulativeData" ></nvd3>
         </div>
@@ -9,16 +9,16 @@
     
     <div class="container medium analytics">    
         <table class="analytics-view-song-list">
-            <th><h3>Songs Data</h3></th>
+            <th><h3 class="analytics-h3">Song Data</h3></th>
             <tr>
                 <th class="analytics-view-song-title">Song Name</th>
  			    <th class="analytics-view-song-title">Song Plays</th>
-                <!--<th class="analytics-view-song-title">Last Played</th>-->
+                <th class="analytics-view-song-title">Last Played</th>
             </tr>
-            <tr class="analytics-view-song-item" ng-repeat="(key, value) in analytics.songs">
- 			    <td>{{ key }}</td>
-                <td>{{ value }}</td>
-                <!--<td>{{ date }}</td>-->
+            <tr class="analytics-view-song-item" ng-repeat="song in analytics.songs">
+ 			    <td>{{ song.label }}</td>
+                <td>{{ song.value }}</td>
+                <td>{{ song.date }}</td>
  		     </tr>
         </table>
    </div>
