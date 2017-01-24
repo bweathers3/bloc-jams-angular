@@ -1,23 +1,19 @@
 (function() {
     function Metric($rootScope) {
-        //$rootScope.songPlays = [];
         $rootScope.songTitles = [];
         $rootScope.songDates = [];
-        holdData = {};
 
         return {
         
-            // Function that records a metric object by pushing it to the $rootScope array
             registerSongPlay: function(songObj, index) {
                 
                 songObj['playedAt'] = new Date();
                 songObj.playedAt = moment(songObj.playedAt).format("dddd, MMMM Do YYYY, h:mm:ss a");    
-                    console.log(songObj);
+              
                 $rootScope.songDates.push(songObj);
                 $rootScope.songTitles.push(songObj.title);
             },
             
-             
             listSongsPlayed: function() {
                 var songs = [];
                 var localData = {};

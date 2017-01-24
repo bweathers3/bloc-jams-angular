@@ -1,9 +1,7 @@
 (function () {
-    function AnalyticsCtrl($scope, Metric, SongPlayer) {
+    function AnalyticsCtrl($scope, $rootScope, Metric, SongPlayer) {
         this.songs = Metric.listSongsPlayed();
-        
-        //console.log(this.songs);
-        //console.log("return data from metric");
+        this.songDates = $rootScope.songDates
         
         $scope.songsBarGraphOptions = {
             chart: {
@@ -35,19 +33,16 @@
         var values = [];
          
         angular.forEach(this.songs, function(value,key) {
-            values.push({'label' : key, 'value' : value});
+            values.push({'label' : key, 'value' : value, 'date' : "blank date"});
         });
-            //console.log(values);
+       
         $scope.cumulativeData = [{
             key: "Cumulative Return",
             values: values
         }];
-            //console.log("$scope data load");
-            //console.log($scope.graphSongData);
-        
     }
     
     angular
         .module('blocJams')
-        .controller('AnalyticsCtrl', [ '$scope', 'Metric', 'SongPlayer', AnalyticsCtrl]);
+        .controller('AnalyticsCtrl', [ '$scope', '$rootScope', 'Metric', 'SongPlayer', AnalyticsCtrl]);
 })();
